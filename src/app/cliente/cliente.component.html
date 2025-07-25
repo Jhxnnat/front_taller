@@ -57,6 +57,91 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="vehiculo_marca">Marca Vehiculo</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="vehiculo_marca"
+                                        name="vehiculo_marca" required
+                                        [(ngModel)]="vehiculo_marca">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="vehiculo_modelo">Modelo Vehiculo</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="vehiculo_modelo"
+                                        name="vehiculo_modelo" required
+                                        [(ngModel)]="vehiculo_modelo">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="vehiculo_placa">Placa Vehiculo</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="vehiculo_placa"
+                                        name="vehiculo_placa" required
+                                        [(ngModel)]="vehiculo_placa">
+                                </div>
+                            </div>
+                        </div>
+						
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="vehiculo_anio">Año Vehiculo</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="number" class="form-control" id="vehiculo_anio"
+                                        name="vehiculo_anio" required
+                                        [(ngModel)]="vehiculo_anio">
+                                </div>
+                            </div>
+                        </div>
+
+						<div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="servicio_descripcion">Descripcion Problema</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="servicio_descripcion"
+                                        name="servicio_descripcion" placeholder="Problemas de..." required
+                                        [(ngModel)]="servicio_descripcion">
+                                </div>
+                            </div>
+                        </div>
+					
+						<div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="servicio_estado">Estado del Trabajo</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="servicio_estado"
+                                        name="servicio_estado" placeholder="En proceso, solucionado..." required
+                                        [(ngModel)]="servicio_estado">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -82,10 +167,10 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Id</th>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Correo</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Vehiculo</th>
+                            <!-- <th scope="col">Telefono</th> -->
+                            <!-- <th scope="col">Correo</th> -->
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -94,12 +179,18 @@
                         <tr *ngFor="let element of this.data; let i = index;">
                             <th scope="row">{{ i+1 }}</th>
                             <td>{{element.idCliente}}</td>
-                            <td>{{element.nombre}}</td>
-                            <td>{{element.apellido}}</td>
-                            <td>{{element.telefono}}</td>
-                            <td>{{element.email}}</td>
+							<td>{{element.nombre}} {{element.apellido}}</td>
+							<td>{{element.vehiculo.marca}} {{element.vehiculo.modelo}} {{element.vehiculo.anio}} - {{element.vehiculo.placa}}</td>
+							<!-- <td>{{element.servicio.estado}}</td> -->
                             <td scope="row">
                                 <div class="d-flex align-items-center">
+                                    <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
+                                        (click)="servicios(element)"> Info Servicio
+									</button>
+                                    <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
+                                        (click)="contact(element)">
+										<i class="bi bi-person-lines-fill"></i> Contactos
+									</button>
                                     <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
                                         (click)="edit(element)">
                                         <i class="bi bi-pencil-square"></i> Editar

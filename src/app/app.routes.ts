@@ -34,9 +34,6 @@ export const routes: Routes = [
             {
               path: "personal", component: MecanicoComponent
             },
-            {
-              path: "vehiculos", component: VehiculoComponent
-            }
         ]
     },
     {

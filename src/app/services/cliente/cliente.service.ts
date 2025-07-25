@@ -28,4 +28,8 @@ export class ClienteService {
     return this.http.httpDelete("/clientes/eliminar/" + id);
   }
 
+  eliminarClientesCompleto(id: number): Observable<ResponseDTO> {
+    return this.http.httpDelete("/clientes/eliminar_completo/" + id);
+  }
+
 }

@@ -34,4 +34,17 @@ export class MensajesService {
       return result.isConfirmed;
     });
   }
+
+  public mensajeInfo(msg: string[]) {
+    Swal.fire({
+      title: 'Contacto',
+	  html: msg.join('<br>'),
+      icon: 'info',
+      showCancelButton: false,
+      showConfirmButton: true,
+      confirmButtonText: 'Aceptar',
+    }).then((result) => {
+      if (result.isConfirmed) { }
+    });
+  }
 }

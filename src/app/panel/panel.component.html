@@ -1,6 +1,5 @@
 <!-- Contenedor principal -->
 <div id="wrapper">
-
     <!-- Contenido principal -->
     <div id="content" class="w-100">
 
@@ -10,10 +9,9 @@
             <span class="sidebar-toggle d-lg-none" id="menu-toggle"><i class="bi bi-list"></i></span>
             <a class="navbar-brand" (click)="urlRouter('/panel/clientes')">Clientes</a>
             <a class="navbar-brand" (click)="urlRouter('/panel/personal')">Personal</a>
-            <a class="navbar-brand" (click)="urlRouter('/panel/vehiculos')">Vehiculos</a>
 
             <div class="ml-auto d-flex align-items-center">
-                <span class="navbar-text mr-3"><i class="bi bi-person-circle"></i>{{this.perfil_name}}</span>
+                <span class="navbar-text mr-3"><i class="bi bi-person-circle"></i> {{this.perfil_name}}</span>
                 <button class="btn btn-sm btn-light rounded-circle" (click)="cerrarSesion()"><i
                         class="bi bi-box-arrow-right"></i></button>
             </div>

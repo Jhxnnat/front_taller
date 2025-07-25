@@ -16,6 +16,10 @@ export class VehiculoService {
     return this.http.httpGet("/vehiculo/listar");
   }
 
+  getVehiculosClientes(id: number): Observable<ResponseDTO> {
+    return this.http.httpGet("/vehiculo/consultar_cliente/" + id);
+  }
+
   saveVehiculos(element: any): Observable<ResponseDTO> {
     return this.http.httpPost("/vehiculo/agregar", element);
   }
