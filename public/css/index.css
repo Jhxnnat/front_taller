@@ -1,0 +1,35 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#hero {
+  height: 70vh;
+  /* 80% de la altura de la ventana */
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  background-color: #f0f3f4;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+}
+
+#nosotros {
+  font-size: 1.2em;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: contain;
+  padding: 1rem;
+}

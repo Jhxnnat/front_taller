@@ -1,0 +1,198 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-3">
+        <!-- Formulario -->
+        <div class="card">
+            <div class="card-header">
+                <h5>PERSONA</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" (ngSubmit)="save()">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="cedula">Cedula</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-list-ol"></i></span>
+                                    </div>
+                                    <input [disabled]="this.option != 1" type="number" class="form-control" id="cedula"
+                                        name="cedula" placeholder="Ingrese sus identificación" required
+                                        [(ngModel)]="cedula">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="nombres">Nombres</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="nombres" name="nombres"
+                                        placeholder="Ingrese sus Nombres" required [(ngModel)]="nombres">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos"
+                                        placeholder="Ingrese sus Apellidos" required [(ngModel)]="apellidos">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="direccion">Dirección</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="direccion" name="direccion"
+                                        placeholder="Ingrese sus direccion" required [(ngModel)]="direccion">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="fecha_nacimiento">Fecha Nacimiento</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="date" class="form-control" id="fecha_nacimiento"
+                                        name="fecha_nacimiento" placeholder="Ingrese su fecha de nacimiento" required
+                                        [(ngModel)]="fecha_nacimiento">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="celular">Celular</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="number" class="form-control" id="celular" name="celular" required [(ngModel)]="celular">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-7">
+                            <div class="form-group">
+                                <label for="userName">Nombre de Usuario</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="userName" name="userName" required [(ngModel)]="userName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-5">
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <select class="form-control" name="estado" id="estado" required [(ngModel)]="estado">
+                                        <option value="1">Activo</option>
+                                        <option value="0">Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="clave">Contraseña</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="clave" name="clave" required [(ngModel)]="clave">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="confirmar">Confirmar</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="confirmar" name="confirmar" required
+                                        [(ngModel)]="confirmar">
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button [disabled]="this.active()" type="submit" class="btn btn-success btn-block">{{ option
+                                ==1 ? "Guardar" :
+                                "Actualizar" }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="card">
+            <div class="card-header">
+                <h5>LISTADO DE DATOS</h5>
+            </div>
+            <div class="card-body">
+                <!-- Tabla -->
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">F.Nacimiento</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Estado</th>
+                            <!-- <th scope="col">Cantidad</th> -->
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of this.data; let i = index;">
+                            <th scope="row">{{ i+1 }}</th>
+                            <td>{{element.idPersona}}</td>
+                            <td>{{element.nombres}}</td>
+                            <td>{{element.apellidos}}</td>
+                            <td>{{element.direccion}}</td>
+                            <td>{{element.fechaNacimiento}}</td>
+                            <td>{{element.telefono}}</td>
+                            <td [innerHTML]="element.estado ? 
+                                '<span class=\'badge badge-success\'>Activo</span>' : 
+                                '<span class=\'badge badge-danger\'>Inactivo</span>'">
+                            </td>
+                            <!-- <td>{{element.tarjetas?.length ?? 0}}</td> -->
+                            <td scope="row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
+                                        (click)="edit(element)">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" title="Eliminar"
+                                        (click)="remove(element.idTipo)">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

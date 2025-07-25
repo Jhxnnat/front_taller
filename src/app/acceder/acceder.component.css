@@ -1,0 +1,23 @@
+.mycontainer{
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.login-container{
+    margin-top: 5%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 100%;
+}
+
+.form-control{
+    box-shadow: none;
+}

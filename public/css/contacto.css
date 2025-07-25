@@ -1,0 +1,24 @@
+body{
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.login-container{
+    margin-top: 5%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 100%;
+}
+
+.form-control{
+    box-shadow: none;
+}

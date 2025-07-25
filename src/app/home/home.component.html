@@ -1,0 +1,88 @@
+<!-- header -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Sistema Gestor SIMCI
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" [class.active]="activeLink === 'home'">
+        <a class="nav-link" href="#hero" (click)="linkStatus('home')"><i class="bi bi-house"></i> Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact"><i class="bi bi-telephone"></i> Contactos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="acceder"><i class="bi bi-lock"></i> Acceder</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="jumbotron text-center" style="background-color: transparent;">
+    <h1 class="display-4">Sistema de Gestión de Talleres Mecánicos</h1>
+    <p class="lead">El Sistema de Gestión Integrador es una solución integral diseñada para facilitar la administración de tu taller, mejorar la eficiencia operativa y aumentar la satisfacción del cliente. Con herramientas intuitivas y potentes, podrás llevar tu negocio al siguiente nivel.
+    </p>
+    <hr class="my-4">
+    <a class="btn btn-success btn-lg" href="acceder" role="button">Comienza Ahora</a>
+  </div>
+</section>
+
+<!-- Funcionalidades -->
+<section id="servicios" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Caracteristicas Principales</h2>
+    <p class="text-center mb-5">Lorem Ipsum.</p>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Gestión de Clientes</h5>
+            <p class="card-text">Mantén un registro completo de tus clientes, incluyendo historial de servicios, preferencias y datos de contacto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Programación de Servicios</h5>
+            <p class="card-text">Facilita la programación de servicios y el seguimiento de trabajos pendientes, optimizando el tiempo de trabajo..</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Facturación y Pagos</h5>
+            <p class="card-text">Genera facturas personalizadas y gestiona pagos de manera rápida y sencilla, con opciones de pago en línea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pie de página -->
+<footer class="bg-dark text-white pt-4 pb-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h5>Contacto</h5>
+        <p>Email: contacto&#64;miempresa.com</p>
+        <p>Tel: +57 300 000 0000</p>
+      </div>
+    </div>
+
+    <hr class="bg-white">
+
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Tarjeta. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

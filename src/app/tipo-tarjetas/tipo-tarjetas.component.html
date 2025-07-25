@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-3">
+        <!-- Formulario -->
+        <div class="card">
+            <div class="card-header">
+                <h5>TIPO DE TARJETAS</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" (ngSubmit)="save()">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="codigo">Código</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-list-ol"></i></span>
+                                    </div>
+                                    <input [disabled]="this.option != 1" type="number" class="form-control" id="codigo" name="codigo"
+                                        placeholder="Ingrese sus código" required [(ngModel)]="codigo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="descripcion" name="descripcion"
+                                        placeholder="Ingrese sus Descripción" required [(ngModel)]="descripcion">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button [disabled]="this.active()" type="submit" class="btn btn-success btn-block">{{ option ==1 ? "Guardar" :
+                                "Actualizar" }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="card">
+            <div class="card-header">
+                <h5>LISTADO DE DATOS</h5>
+            </div>
+            <div class="card-body">
+                <!-- Tabla -->
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of this.data; let i = index;">
+                            <th scope="row">{{ i+1 }}</th>
+                            <td>{{element.idTipo}}</td>
+                            <td>{{element.nombreTipo}}</td>
+                            <td>{{element.tarjetas?.length ?? 0}}</td> 
+                            <td scope="row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
+                                        (click)="edit(element)">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" title="Eliminar"
+                                        (click)="remove(element.idTipo)">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-3">
+        <!-- Formulario -->
+        <div class="card">
+            <div class="card-header">
+                <h5>AGREGAR O ACTUALIZAR</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" (ngSubmit)="save()">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="nombre">Nombres</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Ingrese Nombres" required [(ngModel)]="nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="apellido">Apellidos</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="apellido" name="apellido"
+                                        placeholder="Ingrese Apellidos" required [(ngModel)]="apellido">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="telefono" name="telefono"
+                                        placeholder="Ingrese número de telefono" required [(ngModel)]="telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="email">Correo Electronico</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" id="email"
+                                        name="email" placeholder="Ingrese correo electronico" required
+                                        [(ngModel)]="email">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button [disabled]="this.active()" type="submit" class="btn btn-success btn-block">{{ option
+                                ==1 ? "Agregar" :
+                                "Actualizar" }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="card">
+            <div class="card-header">
+                <h5>LISTADO DE CLIENTES ACTIVOS</h5>
+            </div>
+            <div class="card-body">
+                <!-- Tabla -->
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <!-- TODO: hide idCliente -->
+                        <tr *ngFor="let element of this.data; let i = index;">
+                            <th scope="row">{{ i+1 }}</th>
+                            <td>{{element.idCliente}}</td>
+                            <td>{{element.nombre}}</td>
+                            <td>{{element.apellido}}</td>
+                            <td>{{element.telefono}}</td>
+                            <td>{{element.email}}</td>
+                            <td scope="row">
+                                <div class="d-flex align-items-center">
+                                    <button type="button" class="btn btn-outline-primary btn-sm mr-1" title="Editar"
+                                        (click)="edit(element)">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" title="Eliminar"
+                                        (click)="remove(element.idCliente)">
+                                        <i class="bi bi-trash-fill"></i> Eliminar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
