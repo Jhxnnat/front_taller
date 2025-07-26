@@ -228,23 +228,33 @@ export class ClienteComponent {
   }
 
   private limpiar() {
-	  //TODO: ADD all fields
-    this.idCliente = undefined
-    this.nombre = undefined
-    this.apellido = undefined
-    this.telefono = undefined
-    this.email = undefined
+	this.idCliente = undefined
+	this.nombre = undefined
+	this.apellido = undefined
+	this.telefono = undefined
+	this.email = undefined
+
+	this.idVehiculo = undefined
+	this.vehiculo_marca = undefined
+	this.vehiculo_modelo = undefined
+	this.vehiculo_placa = undefined
+	this.vehiculo_anio = undefined
+
+	this.idServicio = undefined
+	this.servicio_descripcion =  undefined
+	this.servicio_estado = undefined
+	this.servicio_fecha = undefined
   }
 
   public contact(element: any) {
-	this.msgService.mensajeInfo([`Telefono: ${element.telefono}`, `Correo: ${element.email}`])
+	this.msgService.mensajeInfo('Contacto', [`Telefono: ${element.telefono}`, `Correo: ${element.email}`])
   }
 
   public servicios(element: any) {
 	this.servicioService.getServiciosVehiculos(element.vehiculo.idVehiculo).subscribe(response => {
 		const servicios = (response.data as Array<any>)[0];
 		//console.log("servicios: ", servicios[0].descripcion)
-		this.msgService.mensajeInfo([`Estado: ${servicios.estado}`,`Descripcion: ${servicios.descripcion}`, `Fecha Registro: ${servicios.fecharegistro}`]);
+		this.msgService.mensajeInfo('Servicio', [`Estado: ${servicios.estado}`,`Descripcion: ${servicios.descripcion}`, `Fecha Registro: ${servicios.fecharegistro}`]);
 	}, error => { })
   }
 }

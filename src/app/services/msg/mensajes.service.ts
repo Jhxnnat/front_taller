@@ -35,9 +35,9 @@ export class MensajesService {
     });
   }
 
-  public mensajeInfo(msg: string[]) {
+  public mensajeInfo(msg: string[], titulo: string) {
     Swal.fire({
-      title: 'Contacto',
+      title: titulo,
 	  html: msg.join('<br>'),
       icon: 'info',
       showCancelButton: false,
