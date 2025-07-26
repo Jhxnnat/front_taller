@@ -59,9 +59,10 @@ export class ClienteComponent {
 			  console.log("_vehiculo", _vehiculo)
 			  element.vehiculo = _vehiculo[0]
 
-			  this.servicioService.getServiciosVehiculos(element.vehiculo.idVehiculo).subscribe(response => {
+			  this.servicioService.getServiciosVehiculos(_vehiculo[0].idVehiculo).subscribe(response => {
 				  const _servicio = (response.data as Array<any>)
-				  console.log("_servicio", _servicio)
+				  console.log("response_servicio", response.data)
+				  console.log("_servicio", _servicio[0])
 				  element.servicio = _servicio[0]
 			  })
 		  });
@@ -85,7 +86,7 @@ export class ClienteComponent {
 	this.vehiculo_anio = element.vehiculo.anio
 
 	this.idServicio = element.servicio.idServicio
-	console.log("idServicio...", this.idServicio)
+	console.log("servicio...", element.servicio)
 	this.servicio_estado = element.servicio.estado
 	this.servicio_descripcion = element.servicio.descripcion
   }
@@ -125,20 +126,21 @@ export class ClienteComponent {
 			placa: this.vehiculo_placa,
 			idCliente: this._Cliente.idCliente
 		  }).subscribe(response => {
-			if (response.status != "success") {
-				this.msgService.mensajeError(response.message)
-			} else {
+			if (response.status == "success") {
 				this._Vehiculo = (response.data as Array<any>);
+				console.log("_Vehiculo:", this._Vehiculo);
 				this.servicioService.saveServicios({
-					descripcion: this.servicio_descripcion,
-					estado: this.servicio_estado,
+					descripcion: "sting",// this.servicio_descripcion,
+					fecharegistro: Date.now(),
+					estado: "string",// this.servicio_estado,
 					idVehiculo: this._Vehiculo.idVehiculo,
-					fecharegistro: Date.now()
 				}).subscribe(response => {
 					if (response.status != "success") {
 						this.msgService.mensajeError(response.message)
 					}
 				})
+			} else {
+				this.msgService.mensajeError(response.message)
 			}
 			//TODO: the data in data.push(response.data) wont push this vehicules, need to relaod page to get to show vehicles
 
@@ -184,8 +186,8 @@ export class ClienteComponent {
 				this._Vehiculo = (response.data as Array<any>);
 				this.servicioService.editServicios({
 					idServicio: this.idServicio,
-					descripcion: this.servicio_descripcion,
-					estado: this.servicio_estado,
+					descripcion: "string",// this.servicio_descripcion,
+					estado: "string", // this.servicio_estado,
 					idVehiculo: this.idVehiculo,
 					fecharegistro: Date.now()
 				}).subscribe(response => {
@@ -206,6 +208,8 @@ export class ClienteComponent {
             element.apellido = this.apellido
             element.telefono = this.telefono
             element.email = this.email
+			// element.vehiculo = this.vehiculo
+			// element.servicio = this.servicio
             this.limpiar()
           }
         } else {

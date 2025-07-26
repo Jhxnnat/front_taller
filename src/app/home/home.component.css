@@ -1,0 +1,21 @@
+#hero {
+	height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* color: white; */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: center;
+	/* text-shadow: */
+	/*        /* horizontal offset, vertical offset, blur radius, color */ */
+	/*        0px 0px 1px rgba(0, 0, 0, 0.4), */
+	/*        0px 0px 2px rgba(0, 0, 0, 0.2); */
+	background-color: #f0f3f4;
+	/* background: linear-gradient( */
+	/* 	to bottom, */
+	/* 	gray 50%, */
+	/* 	white 100% */
+	/*   ); */
+}

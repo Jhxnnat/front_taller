@@ -35,7 +35,7 @@ export class MensajesService {
     });
   }
 
-  public mensajeInfo(msg: string[], titulo: string) {
+  public mensajeInfo(titulo: string, msg: string[]) {
     Swal.fire({
       title: titulo,
 	  html: msg.join('<br>'),
